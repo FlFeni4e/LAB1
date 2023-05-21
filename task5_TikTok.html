@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {packages:['wordtree']});
+      google.charts.setOnLoadCallback(drawSimpleNodeChart);
+      function drawSimpleNodeChart() {
+
+        var data = google.visualization.arrayToDataTable(
+          [ ['Phrases'],
+          ['TikTok — китайський соцмедійний застосунок для створення та поширення відеофайлів та онлайн-трансляцій. Сервіс запущено у вересні 2016 китайською компанією ByteDance. TikTok найпопулярніша платформа для коротких відео в Азії, яка поширилася на інші частини світу і швидко набирає популярність. TikTok дозволяє користувачам створювати музичні, танцювальні, комедійні та інші відео тривалістю до 10 хвилин, але зазвичай до 15 секунд. Кількість користувачів програми сягнула 1 млрд з 170 країн. TikTok запущено фірмою ByteDance у вересні 2016 року в Китаї. Для міжнародного ринку використовується назва TikTok з моменту, коли програма почала розширення до Індонезії у вересні 2017 року. 23 січня 2018 року, застосунок TikTok посів 1 місце серед завантажень безкоштовних мобільних застосунків у Таїланді. У лютому 2018 року, TikTok розпочав партнерство з Modern Sky, з метою монетизації музики.']
+           ]
+        );
+        var options = {
+          wordtree: {
+            format: 'implicit',
+            type: 'double',
+            word: 'TikTok'
+          }
+        };
+        var wordtree = new google.visualization.WordTree(document.getElementById('wordtree_double'));
+        wordtree.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="wordtree_double" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

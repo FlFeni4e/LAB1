@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {packages:['wordtree']});
+      google.charts.setOnLoadCallback(drawSimpleNodeChart);
+      function drawSimpleNodeChart() {
+
+        var data = google.visualization.arrayToDataTable(
+          [ ['Phrases'],
+          ['PHP is a general-purpose scripting language geared toward web development.[8] It was originally created by Danish-Canadian programmer Rasmus Lerdorf in 1993 and released in 1995.[9][10] The PHP reference implementation is now produced by The PHP Group.[11] PHP was originally an abbreviation of Personal Home Page,[12][13] but it now stands for the recursive initialism PHP: Hypertext Preprocessor.']
+           ]
+        );
+        var options = {
+          wordtree: {
+            format: 'implicit',
+            type: 'double',
+            word: 'PHP'
+          }
+        };
+        var wordtree = new google.visualization.WordTree(document.getElementById('wordtree_double'));
+        wordtree.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="wordtree_double" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
